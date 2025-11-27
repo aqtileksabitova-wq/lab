@@ -16,6 +16,17 @@ export interface Lecture {
   updated_at: string;
 }
 
+export interface VideoLecture {
+  id: number;
+  title: string;
+  short_description: string;
+  youtube_id: string;
+  channel: string;
+  duration_minutes: number;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface Answer {
   id: number;
   answer_text: string;
@@ -50,6 +61,15 @@ export interface TestResult {
   score: number;
   total: number;
   passed_at: string;
+}
+
+export interface CompileResponse {
+  compile_stdout: string;
+  compile_stderr: string;
+  run_stdout: string;
+  run_stderr: string;
+  exit_code: number | null;
+  duration_ms: number;
 }
 
 export interface ApiError {

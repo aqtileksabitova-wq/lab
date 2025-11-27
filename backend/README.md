@@ -12,7 +12,7 @@
    ```bash
    cp env.example .env
    ```
-3. Run API (auto seeds 3 lectures + 3 tests):
+3. Run API (auto seeds 10 лекций, 4 видеолекции и тесты):
    ```bash
    uvicorn app.main:app --reload
    ```
@@ -22,6 +22,7 @@
 - Async DB driver (SQLite by default) with repository layer to switch to PostgreSQL
 - Alembic migrations (run `alembic revision --autogenerate -m "..."` then `alembic upgrade head`)
 - JWT auth, bcrypt hashing, admin guards
+- Локальный C++ компилятор (ищется `g++` или `clang++`) для API `/compiler/run`
 - При первом запуске создаётся админ `admin@cpp.local` / `ChangeMe123!` (меняется в `.env`)
 
 ## Structure
@@ -36,4 +37,9 @@ app/
 seed/           # initial lectures/tests data
 alembic/        # migrations
 ```
+
+## New endpoints
+- `GET /video-lectures` – список видеолекций с YouTube
+- `POST /compiler/run` – компиляция и запуск C++17/20 с ограничениями по времени
+
 

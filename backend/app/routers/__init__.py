@@ -1,6 +1,14 @@
 """API routers module exports."""
 
-from . import auth, lectures, tests, users, progress
+from . import auth, compiler, lectures, progress, tests, users, video_lectures
 
-__all__ = ["auth", "lectures", "tests", "users", "progress"]
+__all__ = [
+    "auth",
+    "compiler",
+    "lectures",
+    "progress",
+    "tests",
+    "users",
+    "video_lectures",
+]
 

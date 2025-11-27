@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import get_settings
 from app.database.init_db import init_data
-from app.routers import auth, lectures, tests, users, progress
+from app.routers import auth, compiler, lectures, tests, users, progress, video_lectures
 
 settings = get_settings()
 app = FastAPI(title=settings.app_name, version=settings.app_version)
@@ -25,6 +25,8 @@ app.include_router(lectures.router)
 app.include_router(tests.router)
 app.include_router(users.router)
 app.include_router(progress.router)
+app.include_router(video_lectures.router)
+app.include_router(compiler.router)
 
 @app.get("/")
 async def healthcheck():

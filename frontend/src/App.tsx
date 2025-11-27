@@ -9,6 +9,8 @@ import Dashboard from "./pages/Dashboard";
 import AdminPanel from "./pages/AdminPanel";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Compiler from "./pages/Compiler";
+import VideoLectures from "./pages/VideoLectures";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import useAuthStore from "./store/auth";
 import { fetchProfile } from "./api/auth";
@@ -29,6 +31,8 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/lectures" element={<Lectures />} />
         <Route path="/lectures/:id" element={<LectureDetail />} />
+        <Route path="/videos" element={<VideoLectures />} />
+        <Route path="/compiler" element={<Compiler />} />
         <Route path="/tests/:id" element={<TestPage />} />
         <Route
           path="/dashboard"
