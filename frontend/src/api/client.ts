@@ -2,7 +2,7 @@ import axios from "axios";
 import useAuthStore from "../store/auth";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL ?? "https://suzie-undefalcated-carson.ngrok-free.dev",
+  baseURL: import.meta.env.VITE_API_URL ?? "https://localhost:8000",
   withCredentials: false,
 });
 
